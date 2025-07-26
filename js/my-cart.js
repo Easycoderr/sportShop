@@ -120,7 +120,7 @@ function editQuantityReload(quantitiyEl, updateEl) {
   showNotfication("update");
   setToLocalStorage(products);
   saveMyCartsToLocalStorage(myCart);
-  displayCartItems();
+  switchCurrency("updatemycart", displayCartItems);
   displayCartCount();
   quantitiyEl.classList.remove("unvisible");
   updateEl.classList.add("unvisible");
@@ -128,3 +128,4 @@ function editQuantityReload(quantitiyEl, updateEl) {
 displayCartCount();
 displayCartItems();
 switchCurrency("mycart", displayCartItems);
+
