@@ -1,0 +1,163 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  transition: all 0.3s ease;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.logo i {
+  font-size: 2rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+}
+nav ul li a i:hover {
+  cursor: pointer;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+nav a:hover {
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+nav a.active {
+  background-color: var(--primary);
+  color: white;
+}
+nav a.active i {
+  color: white;
+}
+.cart-icon {
+  position: relative;
+  font-size: 1.4rem;
+}
+.cart-link {
+  position: relative;
+}
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--secondary);
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 0.75rem;
+  visibility: hidden;
+}
+
+.burger-menu {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: white;
+}
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header-container {
+    position: relative;
+  }
+
+  nav ul {
+    visibility: hidden;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85);
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    max-height: 100%;
+    overflow: hidden;
+    transition: max-height ease;
+    z-index: 99;
+  }
+
+  nav ul.active {
+    visibility: visible;
+    max-height: 500px;
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    padding: 15px 20px;
+    border-radius: 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  nav a:hover {
+    cursor: pointer;
+  }
+  nav ul li a i:hover {
+    cursor: pointer;
+  }
+  .burger-menu {
+    display: block;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+  }
+
+  .cart-item-image {
+    width: 100%;
+  }
+}
+.visible {
+  visibility: visible;
+}

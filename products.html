@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportShop - product</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/product-list-style.css" />
+    <link rel="stylesheet" href="css/nav-style.css" />
+    <link rel="stylesheet" href="css/notfication-style.css" />
+    <link rel="stylesheet" href="css/footer-style.css" />
+    <script type="module" src="js/products.js" defer></script>
+    <script type="module" src="js/burger-menu.js" defer></script>
+    <script src="js/slider.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <a href="index.html" class="logo">
+          <i class="fas fa-shopping-bag"></i>
+          SportShop
+        </a>
+
+        <div class="burger-menu" id="burgerMenu">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <nav>
+          <ul id="navMenu">
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+              <a href="mycart.html" class="cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count"></span>
+              </a>
+            </li>
+            <li>
+              <a><i class="fa-solid fa-user"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Add this after your header but before the main content -->
+    <section class="product-hero-slider">
+      <div class="slider-container">
+        <div class="slider">
+          <div
+            class="slide"
+            style="
+              background-image: url(https://plus.unsplash.com/premium_photo-1682435576307-a71fec9529be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            "
+          >
+            <div class="slide-content">
+              <div class="slide-title">Premium Football Gear</div>
+              <div class="slide-description">
+                Professional equipment for serious players
+              </div>
+              <button class="btn">Shop Collection</button>
+            </div>
+          </div>
+          <div
+            class="slide"
+            style="
+              background-image: url(https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTl8U3NsT3MtRlJQR3d8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1474224017046-182ece80b263?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            "
+          >
+            <div class="slide-content">
+              <div class="slide-title">Basketball Essentials</div>
+              <div class="slide-description">
+                Everything you need for the court
+              </div>
+              <button class="btn">Shop Collection</button>
+            </div>
+          </div>
+          <div
+            class="slide"
+            style="
+              background-image: url(https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            "
+          >
+            <div class="slide-content">
+              <div class="slide-title">Fitness Equipment</div>
+              <div class="slide-description">Upgrade your training routine</div>
+              <button class="btn">Shop Collection</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-nav">
+          <button class="slider-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slider-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Main Shop Page -->
+    <main class="shop-container">
+      <div class="container">
+        <h1 class="page-title">Sports Equipment</h1>
+        <p class="page-subtitle">Find the best gear for your favorite sports</p>
+
+        <div class="product-controls">
+          <div class="currency-filter-container">
+            <!-- Currency Switcher -->
+            <div class="currency-switcher">
+              <span>Currency:</span>
+              <button class="currency-btn active" data-currency="usd">
+                USD
+              </button>
+              <button class="currency-btn" data-currency="iqd">IQD</button>
+            </div>
+
+            <!-- Filter/Sort Dropdown -->
+            <div class="filter-dropdown">
+              <select class="filter-select" id="filter-select">
+                <option value="default">Sort by: Default</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name-asc">Name: A-Z</option>
+                <option value="name-desc">Name: Z-A</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- Product list -->
+        <div class="products-grid"></div>
+
+        <div class="page-navigation">
+          <a href="mycart.html" class="page-btn">View Cart</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3 class="footer-title">SportShop</h3>
+          <p>
+            Your one-stop shop for all sports equipment and gear. We provide
+            high-quality products for professionals and enthusiasts alike.
+          </p>
+          <div class="social-icons">
+            <a href="#" class="social-icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Special Offers</a></li>
+            <li><a href="#">New Arrivals</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Customer Service</h3>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Track Order</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Contact Info</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> City</li>
+            <li><i class="fas fa-phone"></i> 0000-000-00-00</li>
+            <li><i class="fas fa-envelope"></i> info@sportshop.com</li>
+            <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>&copy; 2025 SportShop. All rights reserved.</p>
+      </div>
+    </footer>
+    <div id="toast"></div>
+  </body>
+</html>
