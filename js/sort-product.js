@@ -1,22 +1,33 @@
 import { products } from "./products-data.js";
+const filterSelectEl = document.querySelector(".filter-select");
 const newProducts = new Array(...products);
-export function sortProduct(e, callBack) {
-  e.addEventListener("click", () => {
-    const selected = e.value;
-    if (selected === "price-low") {
-      newProducts.sort((a, b) => a.price - b.price);
-      callBack(newProducts);
-    } else if (selected === "price-high") {
-      newProducts.sort((a, b) => b.price - a.price);
-      callBack(newProducts);
-    } else if (selected === "name-asc") {
-      newProducts.sort((a, b) => a.name.localeCompare(b.name));
-      callBack(newProducts);
-    } else if (selected === "name-desc") {
-      newProducts.sort((a, b) => b.name.localeCompare(a.name));
-      callBack(newProducts);
-    } else {
-      callBack(products);
+const currencyBtn = document.querySelectorAll(".currency-btn");
+let currencyType;
+export function sortProduct(callBack) {
+  currencyBtn.forEach((e) => {
+    if (e.classList.contains("active")) {
+      currencyType = e.dataset.currency;
     }
   });
+  const selected = filterSelectEl.value;
+  switch (selected) {
+    case "price-low":
+      newProducts.sort((a, b) => a.price - b.price);
+      callBack(newProducts, undefined, currencyType);
+      break;
+    case "price-high":
+      newProducts.sort((a, b) => b.price - a.price);
+      callBack(newProducts, undefined, currencyType);
+      break;
+    case "name-asc":
+      newProducts.sort((a, b) => a.name.localeCompare(b.name));
+      callBack(newProducts, undefined, currencyType);
+      break;
+    case "name-desc":
+      newProducts.sort((a, b) => b.name.localeCompare(a.name));
+      callBack(newProducts, undefined, currencyType);
+      break;
+    default:
+      callBack(undefined, undefined, currencyType);
+  }
 }
