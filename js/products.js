@@ -10,9 +10,11 @@ import { showNotfication } from "./utils/notfication.js";
 import { convertUSDtoIQD } from "./utils/currencyExchange.js";
 const productListEl = document.querySelector(".products-grid");
 const filterSelectEl = document.querySelector(".filter-select");
+
+let currencyIQD = "";
 function displayProducts(newProduct, data, currencyType = "usd") {
   let productToPrint = newProduct ? newProduct : products;
-  const currencyIQD = data;
+  currencyIQD = data ? data : currencyIQD;
   let htmlProducts = "";
   productToPrint.forEach((item) => {
     const iqdPrice = convertUSDtoIQD(item.price, currencyIQD);
@@ -42,8 +44,12 @@ function displayProducts(newProduct, data, currencyType = "usd") {
   });
   productListEl.innerHTML = htmlProducts;
   quantitiyFunctionality();
+  switchCurrency("product", displayProducts);
   document.querySelectorAll(".btn").forEach((e) => {
     e.addEventListener("click", addToCart);
+  });
+  filterSelectEl.addEventListener("click", () => {
+    sortProduct(displayProducts);
   });
 }
 
@@ -96,8 +102,5 @@ function quantitiyFunctionality() {
     });
   });
 }
-
-sortProduct(filterSelectEl, displayProducts);
 displayCartCount();
 displayProducts();
-switchCurrency("product", displayProducts);
