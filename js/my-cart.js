@@ -94,6 +94,9 @@ function editQuantity(e) {
     products.forEach((item) => {
       if (item.id === itemId) {
         let QuanToProduct = "";
+        if (Quantity === editItemQuantity) {
+          return;
+        }
         if (Quantity >= editItemQuantity) {
           QuanToProduct = Quantity - editItemQuantity;
           if (item.Quantity >= QuanToProduct) {
@@ -128,4 +131,3 @@ function editQuantityReload(quantitiyEl, updateEl) {
 displayCartCount();
 displayCartItems();
 switchCurrency("mycart", displayCartItems);
-
