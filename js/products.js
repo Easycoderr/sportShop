@@ -44,12 +44,9 @@ function displayProducts(newProduct, data, currencyType = "usd") {
   });
   productListEl.innerHTML = htmlProducts;
   quantitiyFunctionality();
-  switchCurrency("product", displayProducts);
+
   document.querySelectorAll(".btn").forEach((e) => {
     e.addEventListener("click", addToCart);
-  });
-  filterSelectEl.addEventListener("click", () => {
-    sortProduct(displayProducts);
   });
 }
 
@@ -102,5 +99,9 @@ function quantitiyFunctionality() {
     });
   });
 }
+switchCurrency("product", displayProducts);
+filterSelectEl.addEventListener("click", () => {
+  sortProduct(displayProducts);
+});
 displayCartCount();
 displayProducts();
